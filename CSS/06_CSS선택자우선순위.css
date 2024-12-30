@@ -1,0 +1,47 @@
+/* 1순위 : !important */
+div{
+    background-color: lightpink !important;
+}
+
+/* 같은 우선 순위  -> 마지막 작성된 값으로 덮어쓰기*/
+div{
+    background-color: gold !important;
+}
+
+#test1{
+    background-color: silver !important;
+}
+
+/* 5순위 태그 선택자 */
+div{
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+}
+
+/* css 속성이 겹치지 않으면 모두 반영된다 */
+div{
+    border: 1px solid black;
+}
+
+/* 같은 선택자, css속성 작성시 마지막에 작성된 내용으로 덮어쓰기 */
+div{
+    background-color: gray;
+}
+
+/* 4순위 : 클래스 선택자 */
+.cls1{
+    background-color: green;
+    color: white;
+}
+
+/* 3순위 : ID선택자 */
+#test1{
+    height: 100px;
+    color: red;
+    background-color: skyblue;
+
+    /* 새로 추가된 속성 */
+    font-family: '궁서체';
+    font-size: 24px;
+}

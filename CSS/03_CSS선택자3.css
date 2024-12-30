@@ -1,0 +1,46 @@
+/* 일반 구조 선택자(위치 기준) */
+/* first-child -> 첫번째 위치한 요소가 맞으면 선택 */
+/* 첫번째 자식이 일치하지 않으면 적용되지 않는다. */
+#test1 > p:first-child{
+    background-color: red;
+    color: white;
+}
+#test1 > p:last-child{
+    background-color: blue;
+    color: yellow;
+}
+#test1 > p:nth-child(3){
+    background-color: green;
+    color: orange;
+}
+#test1 > p:nth-child(2n){
+    background-color: violet;
+    color: black;
+}
+#test1 > p:nth-last-child(4n){
+    font-size: 30px;
+}
+
+/* 형태 구조 선택자 */
+/* 선택된 형제 요소 중 첫번째 선택 */
+#test2 > p:first-child{
+    background-color: yellowgreen;
+}
+/* p태그 type에서 첫번째 선택 */
+#test2 > p:first-of-type{
+    background-color: cornflowerblue;
+}
+#test2 > p:last-of-type{
+    background-color: skyblue;
+}
+#test2 > p:nth-last-of-type(2n){
+    background-color: brown;
+}
+#test2 > p:nth-last-of-type(3){
+    background-color: #a655f7;
+}
+
+/* 부정 선택자 (:not) */
+#test3 > li:not(:nth-child(3n)){
+    background-color: rgb(110, 237, 123);
+}
