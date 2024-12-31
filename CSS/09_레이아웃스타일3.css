@@ -1,0 +1,143 @@
+*{
+    box-sizing: border-box;
+    /* 
+        width/height 지정한 값이
+        conent + padding + border 값이 되도록
+        content 크기를 자동 조정하는 속성
+        -> 개발자 의도대로 요소 크기를 쉽게 지정
+    */
+
+    /* 
+    html 요소는 기본적으로 설정된 padding, margin이 있는 요소가 존재
+        -> 개발자 의도대로 요소 배치가 안되는 문제가 생길 수 있다!
+        -> 0으로 초기화
+    */
+
+    padding: 0;
+    margin: 0;
+}
+
+div{
+    border: 1px solid black;
+}
+
+/* 감싸는 요소 */
+.container-1{
+    width: 300px;
+    height: 300px;
+    border: 2px solid red;
+    margin: 30px;
+    border-radius: 50%;
+
+    /* 내부 absolute 요소 배치의 기준으로 설정 */
+    position: relative;
+}
+
+.container-1 > div{
+    border-radius: 50%;
+}
+
+/* first */
+.container-1 > div:first-child{
+    width: 200px;
+    height: 200px;
+    background-color: skyblue;
+
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+/* second */
+.container-1 > div:nth-child(2){
+    width: 100px;
+    height: 100px;
+    background-color: red;
+
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+/* third */
+.container-1 > div:last-child{
+    width: 25px;
+    height: 25px;
+    background-color: yellow;
+
+    position: absolute;
+    top: 137.5px;
+    left: 137.5px;
+}
+
+/* z-index 확인 */
+.container-2{
+    width: 300px;
+    height: 300px;
+    position: relative; /* 기준점 */
+}
+
+.container-2 > div:nth-child(1){
+    background-color: red;
+    width: 50%; /* 감싸는 요소의 width의 50%로 계산되어 적용 */
+    height: 50%; /* 감싸는 요소의 height의 50%로 계산되어 적용 */
+    position: absolute;
+
+    z-index: 10; /* z축 방향 10만큼 증가 */
+}
+.container-2 > div:nth-child(2){
+    background-color: orange;
+    width: 60%;
+    height: 60%;
+    position: absolute;
+
+    z-index: 8;
+    right: 0;
+}
+.container-2 > div:nth-child(3){
+    background-color: yellow;
+    width: 70%;
+    height: 70%;
+    position: absolute;
+
+    z-index: 4;
+    right : 0;
+    bottom: 0;
+}
+.container-2 > div:nth-child(4){
+    background-color: green;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+
+    z-index: 11;
+    bottom: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+.top-btn-container{
+    border: 3px solid black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    position: fixed; /* 화면에 고정 */
+    right: 80px;
+    bottom: 50px;
+}
+/* top 버튼(a태그) */
+.top-btn{
+    color: black;
+    text-decoration: none;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    font-size: 18px;
+
+    text-align: center;
+    line-height: 40px;
+}
